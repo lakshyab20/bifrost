@@ -328,9 +328,9 @@ Deactivating or deleting the key, or deactivating the user, cuts the session off
 
 By default only someone signed in to the Bifrost dashboard can approve a sign-in, so every approval is tied to a Bifrost account. With an identity provider (Enterprise), the consent page sends a signed-out developer through SSO first, so this needs no extra setup.
 
-When developers sign in with a virtual key and have **no** Bifrost dashboard account (the usual OSS setup), turn on **Let developers without a Bifrost account approve sign-ins** under **Settings → Gateways**. The sign-in link then carries a short-lived token, valid only for that one sign-in, that lets them approve it with their key. It is the same setting as `client.mcp_enable_temp_token_auth` (*Allow Temp Token Auth Links* on the MCP page), so it applies to MCP OAuth consent as well. Anonymous sessions still require a signed-in dashboard user.
+When developers sign in with a virtual key and have **no** Bifrost dashboard account (the usual OSS setup), turn on **Let developers without a Bifrost account approve sign-ins** under **Settings → Gateways**. The sign-in link then carries a short-lived token, valid only for that one sign-in, that lets them approve it with their key. It is the same setting as `client.mcp_enable_temp_token_auth` (*Allow Temp Token Auth Links* on the MCP page), so it also applies to MCP OAuth consent and MCP per-user headers pages. Anonymous sessions still require a signed-in dashboard user.
 
-On an OSS deployment with no admin account yet, the setup lock refuses the consent page until dashboard authentication is configured, whatever this setting says.
+On an OSS deployment with no admin account yet, or with dashboard authentication disabled, the setup lock refuses the consent page until dashboard authentication is enabled, whatever this setting says.
 
 ### Models, managed settings and telemetry
 
